@@ -56,23 +56,23 @@ export default {
           src: 'https://cli.vuejs.org/favicon.png',
           tags: ['vue', 'vue-cli', 'vue-cli3', 'github page'],
           to: 'build-github-page-using-vue-cli-3'
-        },
-        {
-          title: 'Mark Down Text into Vue Component (vue-showdown)',
-          text:
-            'vue-showdown을 이용해 Mark Down Text를 Vue Component 안에 넣기',
-          src: 'https://vue-showdown.js.org/logo.png',
-          tags: ['vue', 'vue-showdown', 'showdown', 'md'],
-          to: 'md-text-into-vue-component'
-        },
-        {
-          title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
-          text: '오버 풀스택 게임 개발 체험기 - 3D Flappy Bird',
-          src:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Unity_Technologies_logo.svg/1200px-Unity_Technologies_logo.svg.png',
-          tags: ['Unity', 'Over Full Stack', '3D Flappy Bird', 'Diary'],
-          to: 'md-text-into-vue-component'
         }
+        // {
+        //   title: 'Mark Down Text into Vue Component (vue-showdown)',
+        //   text:
+        //     'vue-showdown을 이용해 Mark Down Text를 Vue Component 안에 넣기',
+        //   src: 'https://vue-showdown.js.org/logo.png',
+        //   tags: ['vue', 'vue-showdown', 'showdown', 'md'],
+        //   to: 'md-text-into-vue-component'
+        // },
+        // {
+        //   title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
+        //   text: '오버 풀스택 게임 개발 체험기 - 3D Flappy Bird',
+        //   src:
+        //     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Unity_Technologies_logo.svg/1200px-Unity_Technologies_logo.svg.png',
+        //   tags: ['Unity', 'Over Full Stack', '3D Flappy Bird', 'Diary'],
+        //   to: 'md-text-into-vue-component'
+        // }
       ],
       selectedTags: []
     }
