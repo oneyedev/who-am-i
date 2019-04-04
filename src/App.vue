@@ -3,7 +3,7 @@
     <navigation-drawer></navigation-drawer>
     <tool-bar></tool-bar>
     <v-content>
-      <router-view />
+      <router-view/>
     </v-content>
   </v-app>
 </template>

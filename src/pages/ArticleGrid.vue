@@ -35,9 +35,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <!-- <v-btn flat color="orange">Share</v-btn> -->
-            <v-btn flat color="orange" @click="goToArticle(card.to)">
-              read
-            </v-btn>
+            <v-btn flat color="orange" @click="goToArticle(card.to)">read</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -54,17 +52,24 @@ export default {
           title: 'Build Github Page using Vue cli 3',
           text: 'Vue cli 3를 이용하여 Github page 만들기',
           src: 'https://cli.vuejs.org/favicon.png',
-          tags: ['vue', 'vue-cli', 'vue-cli3', 'github page'],
+          tags: [
+            'vue',
+            'vue-cli',
+            'vue-cli3',
+            'github page',
+            'blog-diary',
+            'diary'
+          ],
           to: 'build-github-page-using-vue-cli-3'
+        },
+        {
+          title: 'Convert Markdown Text into HTML (vue-showdown-highlight) (1)',
+          text:
+            'vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
+          src: 'https://vue-showdown.js.org/logo.png',
+          tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
+          to: 'convert-markdown-text-into-html-1'
         }
-        // {
-        //   title: 'Mark Down Text into Vue Component (vue-showdown)',
-        //   text:
-        //     'vue-showdown을 이용해 Mark Down Text를 Vue Component 안에 넣기',
-        //   src: 'https://vue-showdown.js.org/logo.png',
-        //   tags: ['vue', 'vue-showdown', 'showdown', 'md'],
-        //   to: 'md-text-into-vue-component'
-        // },
         // {
         //   title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
         //   text: '오버 풀스택 게임 개발 체험기 - 3D Flappy Bird',

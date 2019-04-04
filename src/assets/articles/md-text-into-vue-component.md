@@ -1,1 +1,0 @@
-# Mark Down Text into Vue Component (vue-showdown)
