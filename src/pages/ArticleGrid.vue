@@ -63,9 +63,9 @@ export default {
           to: 'build-github-page-using-vue-cli-3'
         },
         {
-          title: 'Convert Markdown Text into HTML (vue-showdown-highlight) (1)',
+          title: 'Convert Markdown Text into HTML - 1',
           text:
-            'vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
+            'vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
           src: 'https://vue-showdown.js.org/logo.png',
           tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
           to: 'convert-markdown-text-into-html-1'

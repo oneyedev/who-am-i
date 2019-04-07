@@ -1,19 +1,26 @@
-# Mark Down Text into Vue Component (1)(vue-showdown-highlight)
+# Convert Markdown Text into HTML - 1
 
-Markdown Text는 작성시의 간편함과 HTML 과의 좋은 궁합으로 인해, readme.md와 같이 간단한 설명서를 작성할 때 자주 사용되는 언어이다 *_이 블로그의 문서 또한 Markdown으로 작성되어 배포되고 있다.* Vue Framework를 사용했을 때, Markdown Text를 HTML로 변환해 보자. 문서는 두 번에 나누어 작성되었다. 첫 번째는 showdown을 활용하여 Markdown Text을 HTML 구조에 맞추어 변환하는 것과 두 번째는 변환된 HTML에서 Code부분은 Syntax highlighting 하고 custom css를 적용해 볼 것이다. 우리는 이 두 문서를 통해 Markdown Text를 github의 readme.md문서와 최대한 비슷하게 만들어볼 것이다(GFM: Github Flavored Markdown).
+Markdown Text는 작성시의 간편함과 HTML 과의 좋은 궁합으로 인해, readme.md와 같이 간단한 설명서를 작성할 때 자주 사용되는 언어이다 *_이 블로그의 문서 또한 Markdown으로 작성되어 배포되고 있다.* Vue Framework 환경에서 Markdown Text를 HTML로 변환해 보자. 문서는 두 번에 나누어 작성되었다. 첫 번째는 showdown과 highlight를 활용하여 Markdown Text을 Github style로 HTML을 변환할 것이며, 두 번째는 showdown의 custom extension을 적용해 자신만의 스타일을 추가하는 방법을 알아 볼 것이다.
 
-우리는 여기서 두 가지 유용한 모듈을 사용한다.
+## Preview
+https://oneyedev.github.io/vue-showdown-highlight-sample/
+
+## Installation
+우리는 여기서 두 가지 유용한 오픈소스 프로젝트를 사용한다.
 - showdown - Markdown Text를 HTML로 바꾸어주는 Javascript Module(http://showdownjs.com).
 - highlight - 웹 상에서 syntax highlight을 도와주는 Javascript Module. 특히 code를 보여줄 때 유용하다(https://highlightjs.org).
 
-## Preview
-https://oneyedev.github.io/markdown-to-html-playground/
+이 두 프로젝트는 Vue가 아닌 다른 환경에서도 적용가능하지만, 우리는 Vue Framework에 좀더 쉽게 적용가능한 확장 모듈을 사용할 것이다. 원하는 프로젝트 폴더에서 아래 모듈을 설치하자. 본문은 vue-cli를 통해 default로 프로젝트를 생성했다고 가정할 것이다.
 
-## Installation
-vue-cli를 통해 default로 프로젝트를 생성 한 후, vue에서 showdown을 쉽게 사용하도록 도와주는 vue-showdown 모듈을 설치하자. 설치 시 showdown은 안에 포함되어 있다(https://vue-showdown.js.org).
 ```sh
 npm install vue-showdown --save
+npm install github-markdown-css --save
+npm install showdown-highlight --save
 ```
+
+- vue-showdown - showdown을 사용하는 vue-component. 설치 시 showdown은 안에 포함되어 있다(https://vue-showdown.js.org).
+- github-markdown-css - github style의 markdown css, showdown은 기본적으로 HTML구조로의 변환만 지원할 뿐, CSS가 자동 적용되진 않는다(https://www.npmjs.com/package/github-markdown-css).
+- showdown-highlight - showdown에 highlight를 적용하는 extension 모듈, css까지 포함되어 있다(https://www.npmjs.com/package/showdown-highlight).
 
 ## Adding vue-showdown Plugin
 기본값으로 프로젝트를 생성했다면 plugin 폴더가 따로 없을 것이다. plugins폴더를 만들고 vue-showdown을 Vue에 등록하자.
@@ -100,11 +107,7 @@ const HELLO_WORLD = 'Hello World!'
 </code></pre>
 
 ## Decorate with github-markdown-css
-showdown은 기본적으로 HTML구조로의 변환만 지원할 뿐, CSS가 자동 적용되진 않는다. Github처럼 보이게 하려면 추가적인 css작업이 필요하다. 아래 모듈은 css파일 하나만 존재한다.
-
-```sh
-npm install github-markdown-css --save
-```
+howdown은 기본적으로 HTML구조로의 변환만 지원할 뿐, CSS가 자동 적용되진 않는다. 설치된 `github-markdown-css`를 직접 추가하고 `vue-showdown` 컴포넌트 클래스 속성 값에 `markdown-body`를 추가하자.
 
 ```js
 // src/plugins/vue-showdown.js
@@ -123,7 +126,7 @@ import 'github-markdown-css'
 </template>
 ```
 
-> 전역 CSS로 적용되니 다른 CSS와 겹치지 않도록 주의하자. `markdown-body`를 class 구분자로 사용한다
+> 전역 CSS로 적용되니 다른 CSS와 겹치지 않도록 주의하자.
 
 `github-markdown-css`는 내부 스타일만 선언되어있다. border와 padding 등은 직접 추가하자. 해당 css는 공식 사이트에서 참조하였다(https://www.npmjs.com/package/github-markdown-css)
 
@@ -148,14 +151,79 @@ import 'github-markdown-css'
 </style>
 ```
 
-여기까지만 해도 훌륭한 문서가 되었다. 그러나 한 가지 코드블록 부분에서 가독성에 중요한 부분인 syntax highlight가 적용되지 않는 것을 볼 수 있다. 다음에는 highlight.js를 적용해서 syntax highlight를 적용해보자.
-<pre>// before higlight.js
+## Highlight code syntax with Highlight.js
+
+여기까지만 해도 훌륭한 문서가 되었다. 그러나 한 가지 코드블록 부분에서 가독성에 중요한 부분인 syntax highlight가 적용되지 않는 것을 볼 수 있다. Highlight.js를 이용해 색깔을 입혀보자. 
+
+`vue-showdown`에서 사용되고 있는 `showdown` 모듈을 가져온 뒤 `showdown-highlight` 확장모듈을 덧붙인다.
+
+```js
+// src/plugins/vue-showdown.js
+import VueShowdown, 
+      { showdown } // get a embeded showdown from vue-showdown
+      from 'vue-showdown'
+// get a showdown-highlight extension module.
+import showdownHighlight from 'showdown-highlight'
+
+// use it!
+showdown.extension('showdownHighlight', showdownHighlight)
+```
+
+그리고 `vue-showdown` 컴포넌트에서 해당 확장모듈을 사용하도록 지정해주자.
+
+```vue
+<template>
+  <div id="app">
+    <vue-showdown
+      :markdown="markdown"
+      flavor="github"
+      class="markdown-body"
+      :extensions="['showdownHighlight']"
+    ></vue-showdown>
+  </div>
+</template>
+```
+
+이러면 기존과 달리 code 태그 클래스 값에 `hljs`라는 값이 추가 되는 것을 확인할 수 있다.
+```html
+<!-- before showdown-highlight extension -->
+<pre>
+  <code class="js language-js">const HELLO_WORLD = 'Hello World!'
+  </code>
+</pre>
+```
+
+<center>↓</center>
+
+```html
+<!-- after showdown-highlight extension -->
+<pre>
+  <code class="hljs js language-js">
+    <span class="hljs-keyword">const</span>
+    HELLO_WORLD = <span class="hljs-string">'Hello World!'</span>
+  </code>
+</pre>
+```
+
+마찬가지로 `showdown-highlight` 모듈은 `hljs`라는 값만 추가해줄 뿐 이에 해당하는 css는 직접 추가해야한다 `highlight` 라이브러리에 기본적으로 들어있는 github style의 code css를 가져와 적용하자.
+
+```js
+// src/plugins/vue-showdown.js
+import 'highlight.js/styles/github.css'
+```
+> 전역 선언이므로 다른 css와 충돌하지 않도록 주의!
+
+***
+드디어 끝났다. 저장 후 새로 고침을 하면, 코드 블록에 색깔이 입혀지는 것을 볼 수 있을 것이다.
+<pre>// before
 const HELLO_WORLD = 'Hello World'
 </pre>
 
 <center>↓</center>
 
 ```js
-// after higlight.js
+// after
 const HELLO_WORLD = 'Hello World'
 ```
+
+다음 시간에는 직접 사용자 정의 extension을 사용하여, 나만의 스타일을 만들어 보는 것을 해보자.
