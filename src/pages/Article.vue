@@ -11,8 +11,7 @@
         :markdown="markdown"
         flavor="github"
         :extensions="['showdownHighlight']"
-      >
-      </VueShowdown>
+      ></VueShowdown>
     </v-card>
   </v-container>
 </template>
@@ -73,6 +72,9 @@ code {
 }
 
 code:before {
+  content: none;
+}
+code::after {
   content: none;
 }
 </style>
