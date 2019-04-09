@@ -35,7 +35,9 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <!-- <v-btn flat color="orange">Share</v-btn> -->
-            <v-btn flat color="orange" @click="goToArticle(card.to)">read</v-btn>
+            <v-btn flat color="orange" @click="goToArticle(card.to)">
+              read
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -69,6 +71,14 @@ export default {
           src: 'https://vue-showdown.js.org/logo.png',
           tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
           to: 'convert-markdown-text-into-html-1'
+        },
+        {
+          title: 'Convert Markdown Text into HTML - 2',
+          text:
+            'vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
+          src: 'https://vue-showdown.js.org/logo.png',
+          tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
+          to: 'convert-markdown-text-into-html-2'
         }
         // {
         //   title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
