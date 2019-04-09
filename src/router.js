@@ -16,15 +16,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/articles/:src',
-      name: 'article',
-      component: Article,
-      props: true
+      path: '/articles',
+      name: 'articles',
+      component: ArticleGrid
     },
     {
-      path: '/articles',
-      name: 'article-grid',
-      component: ArticleGrid
+      path: '/article',
+      name: 'article',
+      component: Article
     },
     { path: '*', component: () => import('@/pages/NotFound.vue') }
   ]

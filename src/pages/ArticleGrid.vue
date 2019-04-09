@@ -118,7 +118,7 @@ export default {
   },
   methods: {
     goToArticle(to) {
-      this.$router.push(`/articles/${to}`)
+      this.$router.push({ name: 'article', query: { id: to } })
     },
     setFilterTags(tags) {
       if (tags.length > 0) {

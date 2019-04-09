@@ -18,9 +18,6 @@
 
 <script>
 export default {
-  props: {
-    src: String
-  },
   data() {
     return {
       markdown: ''
@@ -28,10 +25,13 @@ export default {
   },
   async beforeRouteEnter(to, from, next) {
     try {
-      const module = await import(`@/assets/articles/${to.params.src}.md`)
+      const module = await import(`@/assets/articles/${to.query.id}.md`)
       next(vm => vm.setMarkdown(module.default))
     } catch (error) {
-      next(false)
+      const id = to.query.id
+      const message = id ? `Not found ${id}` : 'Query param "id" is required'
+      console.warn(message)
+      next('/articles')
     }
   },
   methods: {
