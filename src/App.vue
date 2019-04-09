@@ -24,4 +24,21 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus">
+pre code {
+  display: inline-block;
+}
+
+code {
+  box-shadow: none;
+  font-weight: 400;
+  color: #333333;
+}
+
+code:before {
+  content: none;
+}
+code::after {
+  content: none;
+}
+</style>

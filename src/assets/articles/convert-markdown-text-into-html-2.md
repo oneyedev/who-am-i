@@ -98,7 +98,7 @@ const h1LinkExtension = {
 }
 ```
 
-마지막으로 `filter`로 사용할 경우를 살펴보자. 주의할 점은 `converter.makeHtml(text)`메소드에 의해 변환이 진행될 경우 filter가 재귀적으로 호출되어 자칫 무한루프에 빠지기 쉽다는 점이다. 간단한 `counter` 변수를 만들어 무한루프에 빠지지 않도록 방지하자. 정규표현식으로 할 수 있는 변환외의 것을 하고 싶다면, `filter` 함수 안에서 사용하면 된다.
+`filter`로 확장 모듈을 정의하는 경우를 살펴보자. 주의할 점은 `converter.makeHtml(text)`메소드에 의해 변환이 진행될 경우 filter가 재귀적으로 호출되어 자칫 무한루프에 빠지기 쉽다는 점이다. 간단한 `counter` 변수를 만들어 무한루프에 빠지지 않도록 방지하자. 정규표현식으로 할 수 있는 변환외의 것을 하고 싶다면, `filter` 함수 안에서 사용하면 된다.
 
 ```js
 // This code also works!
@@ -125,4 +125,21 @@ const h1LinkExtension = {
       return text;
   }
 }
+```
+
+둘 중에 어느 방식으로든 정의해서 등록 후, 사용하면 된다.
+```js
+// src/plugins/vue-showdown.js
+import VueShowdown, { showdown } from 'vue-showdown'
+showdown.extension('h1LinkExtension', h1LinkExtension)
+```
+
+```html
+<!-- src/App.vue -->
+<vue-showdown
+  :markdown="markdown"
+  flavor="github"
+  class="markdown-body"
+  :extensions="['showdownHighlight', 'colorTextExtension', 'h1LinkExtension']"
+></vue-showdown>
 ```

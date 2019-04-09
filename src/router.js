@@ -7,6 +7,7 @@ import ArticleGrid from './pages/ArticleGrid.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -17,7 +18,8 @@ export default new Router({
     {
       path: '/articles/:src',
       name: 'article',
-      component: Article
+      component: Article,
+      props: true
     },
     {
       path: '/articles',

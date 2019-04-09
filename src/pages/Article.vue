@@ -2,16 +2,16 @@
   <v-container :class="$style.container">
     <v-card
       :class="{
-        'pa-3': $vuetify.breakpoint.smAndDown,
+        'pa-4': $vuetify.breakpoint.smAndDown,
         'pa-5': $vuetify.breakpoint.mdAndUp
       }"
     >
-      <VueShowdown
-        class="markdown-body"
+      <vue-showdown
+        :class="`markdown-body ${$style.index}`"
         :markdown="markdown"
         flavor="github"
-        :extensions="['showdownHighlight']"
-      ></VueShowdown>
+        :extensions="['showdownHighlight', 'h2LinkExtension']"
+      ></vue-showdown>
     </v-card>
   </v-container>
 </template>
@@ -29,21 +29,27 @@ export default {
   async beforeRouteEnter(to, from, next) {
     try {
       const module = await import(`@/assets/articles/${to.params.src}.md`)
-      next(vm => {
-        vm.markdown = module.default
-      })
+      next(vm => vm.setMarkdown(module.default))
     } catch (error) {
       next(false)
     }
   },
-  async beforeRouteUpdate(to, from, next) {
-    try {
-      const module = await import(`@/assets/articles/${to.params.src}.md`)
-      next(vm => {
-        vm.markdown = module.default
-      })
-    } catch (error) {
-      next(false)
+  methods: {
+    async setMarkdown(markdown) {
+      this.markdown = markdown
+      await this.$nextTick()
+      this.moveToindex(this.$route.hash)
+    },
+    async moveToindex(hash) {
+      if (!hash) {
+        return
+      }
+      try {
+        const index = document.querySelector(hash)
+        index.getElementsByTagName('a')[0].click()
+      } catch (error) {
+        console.warn(`${hash} is not founded`)
+      }
     }
   }
 }
@@ -61,20 +67,12 @@ export default {
     padding: 0;
   }
 }
-pre code {
-  display: inline-block;
-}
 
-code {
-  box-shadow: none;
-  font-weight: 400;
-  color: #333333;
+.index h2 {
+  margin-top: -50px !important;
+  padding-top: 74px !important;
 }
-
-code:before {
-  content: none;
-}
-code::after {
-  content: none;
+.index h2 i {
+  transform: rotate(-45deg);
 }
 </style>
