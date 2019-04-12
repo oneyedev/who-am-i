@@ -79,6 +79,22 @@ export default {
           src: 'https://vue-showdown.js.org/logo.png',
           tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
           to: 'convert-markdown-text-into-html-2'
+        },
+        {
+          title: 'eslint와 vetur가 충돌났을 때 vscode setting',
+          text:
+            '[팁] eslint와 vetur의 code formatting 기능이 충돌났을 때 vscode 설정으로 해결하기 ',
+          src: 'https://eslint.org/img/logo.svg',
+          tags: [
+            'vue',
+            'eslint',
+            'vetur',
+            'vscode',
+            'conflict',
+            'settings',
+            'tip'
+          ],
+          to: 'vscode-settings-when-eslint-code-formatting-conflict-with-vetur'
         }
         // {
         //   title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
