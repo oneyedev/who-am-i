@@ -81,7 +81,7 @@ export default {
           to: 'convert-markdown-text-into-html-2'
         },
         {
-          title: 'eslint와 vetur가 충돌났을 때 vscode setting',
+          title: 'vscode settings when eslint conflict with vetur',
           text:
             '[팁] eslint와 vetur의 code formatting 기능이 충돌났을 때 vscode 설정으로 해결하기 ',
           src: 'https://eslint.org/img/logo.svg',
