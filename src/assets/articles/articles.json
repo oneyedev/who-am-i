@@ -1,0 +1,71 @@
+[
+    {
+        "title": "Build Github Page using Vue cli 3",
+        "text": "Vue cli 3를 이용하여 Github page 만들기",
+        "src": "https://cli.vuejs.org/favicon.png",
+        "tags": [
+            "vue",
+            "vue-cli",
+            "vue-cli3",
+            "github page",
+            "blog-diary",
+            "diary"
+        ],
+        "to": "build-github-page-using-vue-cli-3"
+    },
+    {
+        "title": "Convert Markdown Text into HTML - 1",
+        "text": "vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)",
+        "src": "https://vue-showdown.js.org/logo.png",
+        "tags": [
+            "vue",
+            "showdown",
+            "highlight",
+            "md",
+            "blog-diary",
+            "diary"
+        ],
+        "to": "convert-markdown-text-into-html-1"
+    },
+    {
+        "title": "Convert Markdown Text into HTML - 2",
+        "text": "vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)",
+        "src": "https://vue-showdown.js.org/logo.png",
+        "tags": [
+            "vue",
+            "showdown",
+            "highlight",
+            "md",
+            "blog-diary",
+            "diary"
+        ],
+        "to": "convert-markdown-text-into-html-2"
+    },
+    {
+        "title": "vscode settings when eslint conflict with vetur",
+        "text": "[팁] eslint와 vetur의 code formatting 기능이 충돌났을 때 vscode 설정으로 해결하기 ",
+        "src": "https://eslint.org/img/logo.svg",
+        "tags": [
+            "vue",
+            "eslint",
+            "vetur",
+            "vscode",
+            "conflict",
+            "settings",
+            "tip"
+        ],
+        "to": "vscode-settings-when-eslint-code-formatting-conflict-with-vetur"
+    },
+    {
+        "title": "Python unittest module",
+        "text": "python 단위테스트를 모듈로 실행하기",
+        "src": "https://www.python.org/static/opengraph-icon-200x200.png",
+        "tags": [
+            "python",
+            "unit test",
+            "test",
+            "discover"
+        ],
+        "to": "python-unittest-module"
+    }
+]

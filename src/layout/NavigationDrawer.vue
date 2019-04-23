@@ -46,6 +46,10 @@ export default {
         {
           title: 'Vue',
           to: '/articles#vue'
+        },
+        {
+          title: 'Python',
+          to: '/articles#python'
         }
       ]
     }

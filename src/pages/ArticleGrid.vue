@@ -46,65 +46,11 @@
 </template>
 
 <script>
+import articles from '@/assets/articles/articles.json'
 export default {
   data() {
     return {
-      cards: [
-        {
-          title: 'Build Github Page using Vue cli 3',
-          text: 'Vue cli 3를 이용하여 Github page 만들기',
-          src: 'https://cli.vuejs.org/favicon.png',
-          tags: [
-            'vue',
-            'vue-cli',
-            'vue-cli3',
-            'github page',
-            'blog-diary',
-            'diary'
-          ],
-          to: 'build-github-page-using-vue-cli-3'
-        },
-        {
-          title: 'Convert Markdown Text into HTML - 1',
-          text:
-            'vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
-          src: 'https://vue-showdown.js.org/logo.png',
-          tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
-          to: 'convert-markdown-text-into-html-1'
-        },
-        {
-          title: 'Convert Markdown Text into HTML - 2',
-          text:
-            'vue framework 상에서 vue-showdown-highlight을 이용해 Mark Down Text를 HTML로 변환하기 (1)',
-          src: 'https://vue-showdown.js.org/logo.png',
-          tags: ['vue', 'showdown', 'highlight', 'md', 'blog-diary', 'diary'],
-          to: 'convert-markdown-text-into-html-2'
-        },
-        {
-          title: 'vscode settings when eslint conflict with vetur',
-          text:
-            '[팁] eslint와 vetur의 code formatting 기능이 충돌났을 때 vscode 설정으로 해결하기 ',
-          src: 'https://eslint.org/img/logo.svg',
-          tags: [
-            'vue',
-            'eslint',
-            'vetur',
-            'vscode',
-            'conflict',
-            'settings',
-            'tip'
-          ],
-          to: 'vscode-settings-when-eslint-code-formatting-conflict-with-vetur'
-        }
-        // {
-        //   title: 'Over Full Stack Game Dev. Diary - 3D Flappy Bird (1)',
-        //   text: '오버 풀스택 게임 개발 체험기 - 3D Flappy Bird',
-        //   src:
-        //     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Unity_Technologies_logo.svg/1200px-Unity_Technologies_logo.svg.png',
-        //   tags: ['Unity', 'Over Full Stack', '3D Flappy Bird', 'Diary'],
-        //   to: 'md-text-into-vue-component'
-        // }
-      ],
+      cards: articles,
       selectedTags: []
     }
   },
