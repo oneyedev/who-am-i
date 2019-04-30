@@ -79,5 +79,17 @@
             "exception"
         ],
         "to": "python-unittest-exception"
+    },
+    {
+        "title": "Unity test runner references error",
+        "text": "[팁] Unity test runner에서 CS0246 에러가 났을 때 해결 방법",
+        "src": "https://unity3d.com/files/images/ogimg.jpg",
+        "tags": [
+            "unity",
+            "unity test runner",
+            "CS0246",
+            "references error"
+        ],
+        "to": "unity-test-runner-references-error"
     }
 ]
