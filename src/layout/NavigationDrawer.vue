@@ -1,8 +1,8 @@
 <template>
   <v-navigation-drawer
     app
-    stateless
     :value="isNavOn"
+    @input="onChangedValue"
     :temporary="$vuetify.breakpoint.xsOnly"
   >
     <v-list>
@@ -69,6 +69,9 @@ export default {
       if (this.$vuetify.breakpoint.name === 'xs') {
         this.$store.commit('navSwitch', false)
       }
+    },
+    onChangedValue(value) {
+      this.$store.commit('navSwitch', value)
     }
   }
 }
