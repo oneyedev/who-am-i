@@ -91,5 +91,20 @@
             "references error"
         ],
         "to": "unity-test-runner-references-error"
+    },
+    {
+        "title": "Create document bookmark anchor",
+        "text": "HTML document에 anchor기능 추가하기",
+        "src": "https://cli.vuejs.org/favicon.png",
+        "tags": [
+            "vue",
+            "vue-router",
+            "bookmark",
+            "anchor",
+            "index",
+            "blog",
+            "blog-diary"
+        ],
+        "to": "create-document-bookmark-anchor"
     }
 ]
