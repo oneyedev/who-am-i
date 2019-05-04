@@ -64,8 +64,9 @@ export default {
         return
       }
       try {
-        const index = document.querySelector(hash)
-        index.getElementsByTagName('a')[0].click()
+        const el = window.document.querySelector(hash)
+        const rect = el.getBoundingClientRect()
+        window.scrollBy(0, rect.top)
       } catch (error) {
         console.warn(`${hash} is not founded`)
       }

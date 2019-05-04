@@ -57,7 +57,9 @@ export default {
     $route: {
       handler: function(search) {
         const finded = this.findItem(search.hash)
-        this.active.push(finded.id)
+        if (finded) {
+          this.active.push(finded.id)
+        }
       },
       deep: true,
       immediate: true
