@@ -3,12 +3,13 @@ import Router from 'vue-router'
 import Home from './pages/Home.vue'
 import Article from './pages/Article.vue'
 import ArticleGrid from './pages/ArticleGrid.vue'
-
+import { scrollBehavior } from './plugins/vuetify'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior: scrollBehavior,
   routes: [
     {
       path: '/',
@@ -28,3 +29,4 @@ export default new Router({
     { path: '*', component: () => import('@/pages/NotFound.vue') }
   ]
 })
+export default router

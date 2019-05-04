@@ -7,20 +7,25 @@
       }"
     >
       <vue-showdown
+        ref="contents"
         :class="`markdown-body ${$style.index}`"
         :markdown="markdown"
         flavor="github"
-        :extensions="['showdownHighlight', 'h2LinkExtension']"
+        :extensions="['showdownHighlight', 'linkExtension']"
       ></vue-showdown>
     </v-card>
+    <article-menu v-if="contents" :contents="contents"></article-menu>
   </v-container>
 </template>
 
 <script>
+import ArticleMenu from '@/components/ArticleMenu'
 export default {
+  components: { ArticleMenu },
   data() {
     return {
-      markdown: ''
+      markdown: '',
+      contents: null
     }
   },
   async beforeRouteEnter(to, from, next) {
@@ -34,11 +39,25 @@ export default {
       next('/articles')
     }
   },
+  created() {
+    window.onClickArticleAnchor = this.onClickArticleAnchor
+  },
+  beforeDestroy() {
+    window.onClickArticleAnchor = null
+  },
   methods: {
+    onClickArticleAnchor(hash) {
+      this.$router.push({
+        name: 'article',
+        query: { id: this.$route.query.id },
+        hash: hash
+      })
+    },
     async setMarkdown(markdown) {
       this.markdown = markdown
       await this.$nextTick()
       this.moveToindex(this.$route.hash)
+      this.contents = this.$refs['contents'].$el
     },
     async moveToindex(hash) {
       if (!hash) {
@@ -68,11 +87,16 @@ export default {
   }
 }
 
-.index h2 {
+.index h2,
+.index h3 {
   margin-top: -50px !important;
   padding-top: 74px !important;
 }
-.index h2 i {
+.index i {
   transform: rotate(-45deg);
+}
+
+.article_index {
+  position: fixed;
 }
 </style>
