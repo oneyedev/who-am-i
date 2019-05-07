@@ -48,7 +48,7 @@ function moveByConstantSpeed(target, speed) {
     window.requestAnimationFrame(currentTime => step(currentTime, window.performance.now()));
 }
 ```
-> 위 메소드는  `target` HTML element가 항상 존재한다는 가정하에 작성되었으므로, 동적으로 DOM tree가 변경될 경우 주의 필요.
+> 위 메소드는  `target` HTML element가 항상 존재한다는 가정하에 작성되는 등 동적인 상황에 대한 고려가 되어있지 않으므로 실제 적용하는데에는 주의가 필요.
 
 ## Move by constant frames
 `속력 = 거리 / 시간(프레임)`이므로 간단한 계산으로 구현.
