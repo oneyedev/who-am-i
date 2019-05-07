@@ -106,5 +106,19 @@
             "blog-diary"
         ],
         "to": "create-document-bookmark-anchor"
+    },
+    {
+        "title": "Smooth scroll html document",
+        "text": "HTML document에 부드러운 스크롤 적용하기",
+        "src": "https://cli.vuejs.org/favicon.png",
+        "tags": [
+            "vue",
+            "vue-router",
+            "smooth",
+            "scroll",
+            "blog",
+            "blog-diary"
+        ],
+        "to": "smooth-scroll-html-document"
     }
 ]
