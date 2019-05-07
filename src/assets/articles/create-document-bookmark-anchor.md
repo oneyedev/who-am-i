@@ -96,26 +96,36 @@ export default {
   }
 }
 ``` 
-이 방법은 vue-router에서 지원하는 고급기능을 많이 활용하지는 못하나,가장 간단하고 `vue`종속적이지 않은 방법이다. 
+이 방법은 vue-router에서 지원하는 고급기능(`offset`과 같은)을 많이 활용하지는 못하나, 가장 간단하고 `vue`종속적이지 않은 방법이다. 
 
-### Using `window.scrollBy` 
-만일 어떠한 이유에선지 위의 방법이 통하지 않는다면 `window`의 `scrollBy` 메소드를 이용하는 것도 가능하다.
+### Using `window.scrollBy` or `window.scrollTo`
+만일 HTML5를 지원하지 않는 브라우저라던가, `event block`등의 이유로 위의 방법이 통하지 않는다면 좀더 전통적이고 직접적인 `window`의 `scrollBy` 메소드나 `scrollTo` 를 이용하는 것도 가능하다.
 
 ```js
 export default {
  methods: {
     goToAnchor(anchor) {
-      const el = document.getElementById(anchor.id);
-      const top = el.getBoundingClientRect().top;
+      const top = anchor.getBoundingClientRect().top;
       window.scrollBy(0, top);
     }
   }
 }
 ```
-이 방법 또한 `vue` 종속적이지 않다는 장점이 있다.
+
+```js
+export default {
+ methods: {
+    goToAnchor(anchor) {
+      const top = anchor.offsetTop;
+      window.scrollTo(0, top);
+    }
+  }
+}
+```
+이 방법 또한 `vue` 종속적이지 않다는 장점이 있으나, 스크롤 위치에 대한 정확한 숫자 연산을 직접 해주어야 하는 번거로움이 있다.
 
 ### scrollBehavior in `vue-router`
-`vue-router`의 `scrollBehavior`속성을 이용하여 구현할 수도 있다.
+만일 `vue-rotuer`를 사용중이라면 `scrollBehavior`속성을 이용하여 구현할 수도 있다. 위의 방법들은 단일 컴포넌트에만 적용할 경우에는 간단하나, 전역으로 적용하고 싶은 경우, `window`객체에 직접 이벤트를 바인딩하던가 `mixin`을 이용하여 일일히 선언해주어야 하는 번거로움이 있다. 하지만 이 방법을 이용하면, 해당 `router`에서 다루어지는 페이지에 공통적으로 적용됨과 동시에 `router`별로 다른 로직이 적용될 수 있기 때문에, 코드 관리상에서 상당한 이점을 가지고 있다.
 
 ```js
 export default {
