@@ -3,7 +3,7 @@
 article 문서를 읽을 때 자동으로 목차를 옆에 띄워주는 북마크를 만들어보자.
 
 ## Preview
-https://oneyedev.github.io/vue-router-anchor-scroll-sample/
+https://oneyedev.github.io/vue-router-anchor-scroll-sample/index
 
 ## Get Anchors
 ```html
