@@ -44,7 +44,7 @@ export default {
     anchors: []
   }),
   mounted() {
-    this.anchors = document.querySelectorAll("h1");
+    this.anchors = [...document.querySelectorAll("h1")];
   }
 }
 ```
