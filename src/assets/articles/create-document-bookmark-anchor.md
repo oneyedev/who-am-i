@@ -7,7 +7,6 @@ https://oneyedev.github.io/vue-router-anchor-scroll-sample/index
 
 ## Get Anchors
 ```html
-This is vue router anchor scroll sample!
 <h1 id="section1">section1</h1>
     Lorem ipsum litora lacinia phasellus aenean placerat phasellus, urna sed
     cubilia convallis cubilia feugiat nec feugiat, diam eu proin feugiat
