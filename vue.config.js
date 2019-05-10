@@ -12,5 +12,6 @@ module.exports = {
     index: 'src/main.js',
     articles: 'src/main.js',
     article: 'src/main.js'
-  }
+  },
+  runtimeCompiler: true
 }
