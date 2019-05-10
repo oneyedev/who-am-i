@@ -120,5 +120,19 @@
             "blog-diary"
         ],
         "to": "smooth-scroll-html-document"
+    },
+    {
+        "title": "Vue runtime compile component",
+        "text": "Vue component를 runtime시 compile하기",
+        "src": "https://cli.vuejs.org/favicon.png",
+        "tags": [
+            "vue",
+            "compile",
+            "runtime",
+            "component",
+            "blog",
+            "blog-diary"
+        ],
+        "to": "vue-runtime-compile-component"
     }
 ]
