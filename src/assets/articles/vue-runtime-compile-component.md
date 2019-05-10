@@ -70,7 +70,7 @@ export default {
 ## Create a playground component
 
 ### App.vue
-<vue-md-component target="GithubVueCode" data="return {url: 'https://raw.githubusercontent.com/oneyedev/vue-runtime-compile-component/master/src/App.vue'}"></vue-md-component>
+<github-vue-code url="https://raw.githubusercontent.com/oneyedev/vue-runtime-compile-component/master/src/App.vue"></github-vue-code>
 
 script내의 `compile` 메소드에서 사용법을 확인할 수 있다.
 ```js
