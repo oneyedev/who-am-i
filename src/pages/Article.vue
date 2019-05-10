@@ -6,13 +6,10 @@
         'pa-5': $vuetify.breakpoint.mdAndUp
       }"
     >
-      <vue-showdown
-        ref="contents"
-        :class="`markdown-body ${$style.index}`"
-        :markdown="markdown"
-        flavor="github"
-        :extensions="['showdownHighlight', 'linkExtension']"
-      ></vue-showdown>
+      <article-contents
+        :id="id"
+        @ready="onReadyArticleContents"
+      ></article-contents>
     </v-card>
     <article-menu v-if="contents" :contents="contents"></article-menu>
   </v-container>
@@ -20,44 +17,33 @@
 
 <script>
 import ArticleMenu from '@/components/ArticleMenu'
+import ArticleContents from '@/components/ArticleContents'
 export default {
-  components: { ArticleMenu },
+  components: { ArticleMenu, ArticleContents },
   data() {
     return {
-      markdown: '',
+      id: '',
       contents: null
-    }
-  },
-  async beforeRouteEnter(to, from, next) {
-    try {
-      const module = await import(`@/assets/articles/${to.query.id}.md`)
-      next(vm => vm.setMarkdown(module.default))
-    } catch (error) {
-      const id = to.query.id
-      const message = id ? `Not found ${id}` : 'Query param "id" is required'
-      console.warn(message)
-      next('/articles')
     }
   },
   created() {
     window.onClickArticleAnchor = this.onClickArticleAnchor
+    this.id = this.$route.query.id
   },
   beforeDestroy() {
     window.onClickArticleAnchor = null
   },
   methods: {
+    onReadyArticleContents(contents) {
+      this.moveToindex(this.$route.hash)
+      this.contents = contents
+    },
     onClickArticleAnchor(hash) {
       this.$router.push({
         name: 'article',
         query: { id: this.$route.query.id },
         hash: hash
       })
-    },
-    async setMarkdown(markdown) {
-      this.markdown = markdown
-      await this.$nextTick()
-      this.moveToindex(this.$route.hash)
-      this.contents = this.$refs['contents'].$el
     },
     async moveToindex(hash) {
       if (!hash) {
@@ -66,7 +52,7 @@ export default {
       try {
         const el = window.document.querySelector(hash)
         const rect = el.getBoundingClientRect()
-        window.scrollBy(0, rect.top)
+        window.scrollBy(0, rect.top + -64)
       } catch (error) {
         console.warn(`${hash} is not founded`)
       }
@@ -86,15 +72,6 @@ export default {
   .container {
     padding: 0;
   }
-}
-
-.index h2,
-.index h3 {
-  margin-top: -50px !important;
-  padding-top: 74px !important;
-}
-.index i {
-  transform: rotate(-45deg);
 }
 
 .article_index {
