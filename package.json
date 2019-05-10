@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-serve": "vue-cli-service build && serve dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "core-js": "^2.6.5",
     "github-markdown-css": "^3.0.1",
     "material-design-icons": "^3.0.1",
     "raw-loader": "^2.0.0",
