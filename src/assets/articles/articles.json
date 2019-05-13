@@ -134,5 +134,16 @@
             "blog-diary"
         ],
         "to": "vue-runtime-compile-component"
+    },
+    {
+        "title": "leetcode - Add Two Numbers",
+        "text": "leetcode 문제 풀이",
+        "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
+        "tags": [
+            "leetcode",
+            "algorithms",
+            "add-two-numbers"
+        ],
+        "to": "leetcode-add-two-numbers"
     }
 ]
