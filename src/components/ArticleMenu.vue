@@ -52,7 +52,8 @@ export default {
       return arr
     },
     nodeToIndexItem(node) {
-      return { name: node.innerText, target: node.id }
+      const name = document.getElementById(node.id).innerText
+      return { name, target: node.id }
     }
   }
 }
