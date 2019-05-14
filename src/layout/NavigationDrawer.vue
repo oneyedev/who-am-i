@@ -54,6 +54,10 @@ export default {
         {
           title: 'Unity',
           to: '/articles#unity'
+        },
+        {
+          title: 'Algorithm',
+          to: '/articles#algorithm'
         }
       ]
     }
