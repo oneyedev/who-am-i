@@ -197,5 +197,19 @@
         "to": "read-git-commit-history",
         "regTime": 1558707113000,
         "chgTime": 1558707315000
+    },
+    {
+        "title": "Javascript path alias intellisense in vs code",
+        "text": "[팁] vs code에서 vue path alias 자동완성 설정",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png",
+        "tags": [
+            "vue",
+            "vue-cli3",
+            "vscode",
+            "path",
+            "path-alias",
+            "intellisense"
+        ],
+        "to": "js-path-alias-intellisense-in-vscode"
     }
 ]
