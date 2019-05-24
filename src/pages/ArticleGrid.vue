@@ -23,6 +23,9 @@
           <v-card-title primary-title>
             <div>
               <h3 class="headline mb-0">{{ card.title }}</h3>
+              <span class="grey--text lighten-2">
+                {{ card.regTime | toDateFormat }}
+              </span>
             </div>
           </v-card-title>
           <v-card-text>
@@ -47,7 +50,9 @@
 
 <script>
 import articles from '@/assets/articles/articles.json'
+import filters from '@/mixins/filters'
 export default {
+  mixins: [filters],
   data() {
     return {
       cards: articles,

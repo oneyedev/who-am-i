@@ -11,7 +11,9 @@
             "blog-diary",
             "diary"
         ],
-        "to": "build-github-page-using-vue-cli-3"
+        "to": "build-github-page-using-vue-cli-3",
+        "regTime": 1553684462000,
+        "chgTime": 1553832702000
     },
     {
         "title": "Convert Markdown Text into HTML - 1",
@@ -25,7 +27,9 @@
             "blog-diary",
             "diary"
         ],
-        "to": "convert-markdown-text-into-html-1"
+        "to": "convert-markdown-text-into-html-1",
+        "regTime": 1554388574000,
+        "chgTime": 1554638740000
     },
     {
         "title": "Convert Markdown Text into HTML - 2",
@@ -39,7 +43,9 @@
             "blog-diary",
             "diary"
         ],
-        "to": "convert-markdown-text-into-html-2"
+        "to": "convert-markdown-text-into-html-2",
+        "regTime": 1554791631000,
+        "chgTime": 1554807717000
     },
     {
         "title": "vscode settings when eslint conflict with vetur",
@@ -54,7 +60,9 @@
             "settings",
             "tip"
         ],
-        "to": "vscode-settings-when-eslint-code-formatting-conflict-with-vetur"
+        "to": "vscode-settings-when-eslint-code-formatting-conflict-with-vetur",
+        "regTime": 1555037539000,
+        "chgTime": 1555037539000
     },
     {
         "title": "Python unittest module",
@@ -66,7 +74,9 @@
             "test",
             "discover"
         ],
-        "to": "python-unittest-module"
+        "to": "python-unittest-module",
+        "regTime": 1556011888000,
+        "chgTime": 1556011888000
     },
     {
         "title": "Python unittest exception",
@@ -78,7 +88,9 @@
             "test",
             "exception"
         ],
-        "to": "python-unittest-exception"
+        "to": "python-unittest-exception",
+        "regTime": 1556149404000,
+        "chgTime": 1556149404000
     },
     {
         "title": "Unity test runner references error",
@@ -90,7 +102,9 @@
             "CS0246",
             "references error"
         ],
-        "to": "unity-test-runner-references-error"
+        "to": "unity-test-runner-references-error",
+        "regTime": 1556592441000,
+        "chgTime": 1556592441000
     },
     {
         "title": "Create document bookmark anchor",
@@ -105,7 +119,9 @@
             "blog",
             "blog-diary"
         ],
-        "to": "create-document-bookmark-anchor"
+        "to": "create-document-bookmark-anchor",
+        "regTime": 1556976942000,
+        "chgTime": 1557217325000
     },
     {
         "title": "Smooth scroll html document",
@@ -119,7 +135,9 @@
             "blog",
             "blog-diary"
         ],
-        "to": "smooth-scroll-html-document"
+        "to": "smooth-scroll-html-document",
+        "regTime": 1557223588000,
+        "chgTime": 1557224039000
     },
     {
         "title": "Vue runtime compile component",
@@ -133,7 +151,9 @@
             "blog",
             "blog-diary"
         ],
-        "to": "vue-runtime-compile-component"
+        "to": "vue-runtime-compile-component",
+        "regTime": 1557489626000,
+        "chgTime": 1557529447000
     },
     {
         "title": "leetcode - Add Two Numbers",
@@ -144,7 +164,9 @@
             "algorithm",
             "add-two-numbers"
         ],
-        "to": "leetcode-add-two-numbers"
+        "to": "leetcode-add-two-numbers",
+        "regTime": 1557738718000,
+        "chgTime": 1557738718000
     },
     {
         "title": "leetcode - Longest Substring Without Repeating Characters",
@@ -155,6 +177,25 @@
             "algorithm",
             "longest-substring-without-repeating-characters"
         ],
-        "to": "leetcode-longest-substring-without-repeating-characters"
+        "to": "leetcode-longest-substring-without-repeating-characters",
+        "regTime": 1557829325000,
+        "chgTime": 1557829325000
+    },
+    {
+        "title": "Read git commit history - nodegit",
+        "text": "nodegit을 이용하여 git commit history 읽기",
+        "src": "https://www.nodegit.org/img/nodegit.svg",
+        "tags": [
+            "vue",
+            "vue-cli3",
+            "nodegit",
+            "git",
+            "history",
+            "blog",
+            "blog-diary"
+        ],
+        "to": "read-git-commit-history",
+        "regTime": 1557829325000,
+        "chgTime": 1557829325000
     }
 ]
