@@ -12,7 +12,6 @@ fs.readFile(articlePath, 'utf8', (err, data) => {
       .finally(() => {
         repo.cleanup()
         const newData = JSON.stringify(articles, null, 4)
-        console.log(newData)
         fs.writeFileSync(articlePath, newData, 'utf8')
       })
   })

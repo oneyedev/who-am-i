@@ -3,6 +3,11 @@
 # abort on errors
 set -e
 
+# update article date
+node article-date-updater
+git add src/assets/articles/articles.json
+git commit -m "update article date"
+
 # build
 npm run build
 
