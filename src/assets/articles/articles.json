@@ -210,6 +210,8 @@
             "path-alias",
             "intellisense"
         ],
-        "to": "js-path-alias-intellisense-in-vscode"
+        "to": "js-path-alias-intellisense-in-vscode",
+        "regTime": 1558708454000,
+        "chgTime": 1558708454000
     }
 ]
