@@ -51,7 +51,7 @@ module.exports.getRecentFileCommit = async function(filePath) {
 ```
 
 ## Run a Test
-```
+```sh
 npm run test:unit
 ```
-> `@vue/cli-plugin-unit-jest` 를 이용. 자세한 사항은 [Github](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest) 참조
+> 자세한 사항은 [@vue/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest) 참조
