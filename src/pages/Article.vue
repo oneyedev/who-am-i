@@ -12,7 +12,7 @@
       ></article-contents>
     </v-card>
     <article-menu v-if="contents" :contents="contents"></article-menu>
-    <article-comment :id="id"></article-comment>
+    <article-comment v-if="contents" :id="id" :title="title"></article-comment>
   </v-container>
 </template>
 
@@ -25,24 +25,13 @@ export default {
   data() {
     return {
       id: '',
+      title: '',
       contents: null
     }
   },
   created() {
     window.onClickArticleAnchor = this.onClickArticleAnchor
     this.id = this.$route.query.id
-  },
-  mounted() {
-    const id = this.id
-    window.disqus_config = function() {
-      this.page.url = `https://oneyedev.github.io/article?id=${id}` // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    }
-    var d = document
-    var s = d.createElement('script')
-    s.src = 'https://personal-blog-for-oneyedev.disqus.com/embed.js'
-    s.setAttribute('data-timestamp', +new Date())
-    this.$el.appendChild(s)
   },
   beforeDestroy() {
     window.onClickArticleAnchor = null
@@ -51,6 +40,7 @@ export default {
     onReadyArticleContents(contents) {
       this.moveToindex(this.$route.hash)
       this.contents = contents
+      this.title = document.getElementsByTagName('h1')[0].innerText
     },
     onClickArticleAnchor(hash) {
       this.$router.push({
