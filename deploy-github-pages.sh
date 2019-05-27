@@ -6,7 +6,7 @@ set -e
 # update article date
 node article-date-updater
 git add src/assets/articles/articles.json
-git commit -m "update article date"
+git commit -m "update article date" | true
 
 # build
 npm run build
@@ -25,6 +25,5 @@ git commit -m 'deploy'
 git push -f --set-upstream https://github.com/oneyedev/oneyedev.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 cd -
