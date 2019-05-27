@@ -213,5 +213,19 @@
         "to": "js-path-alias-intellisense-in-vscode",
         "regTime": 1558708454000,
         "chgTime": 1558708454000
+    },
+    {
+        "title": "Adding Disqus to Vue component",
+        "text": "Disqus를 vue component에 추가하기",
+        "src": "https://c.disquscdn.com/next/791038e/marketing/assets/img/brand/disqus-logo-blue.svg",
+        "tags": [
+            "vue",
+            "vue-cli3",
+            "disqus",
+            "reply",
+            "blog",
+            "blog-diary"
+        ],
+        "to": "adding-disqus-to-vue-component"
     }
 ]
