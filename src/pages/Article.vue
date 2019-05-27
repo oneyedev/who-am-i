@@ -12,14 +12,16 @@
       ></article-contents>
     </v-card>
     <article-menu v-if="contents" :contents="contents"></article-menu>
+    <article-comment :id="id"></article-comment>
   </v-container>
 </template>
 
 <script>
 import ArticleMenu from '@/components/ArticleMenu'
 import ArticleContents from '@/components/ArticleContents'
+import ArticleComment from '@/components/ArticleComment'
 export default {
-  components: { ArticleMenu, ArticleContents },
+  components: { ArticleMenu, ArticleContents, ArticleComment },
   data() {
     return {
       id: '',
@@ -29,6 +31,18 @@ export default {
   created() {
     window.onClickArticleAnchor = this.onClickArticleAnchor
     this.id = this.$route.query.id
+  },
+  mounted() {
+    const id = this.id
+    window.disqus_config = function() {
+      this.page.url = `https://oneyedev.github.io/article?id=${id}` // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = id // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    }
+    var d = document
+    var s = d.createElement('script')
+    s.src = 'https://personal-blog-for-oneyedev.disqus.com/embed.js'
+    s.setAttribute('data-timestamp', +new Date())
+    this.$el.appendChild(s)
   },
   beforeDestroy() {
     window.onClickArticleAnchor = null
