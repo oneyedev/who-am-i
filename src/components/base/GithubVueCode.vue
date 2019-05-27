@@ -3,6 +3,7 @@
     <v-tab v-for="(item, index) in items" :key="index">{{ item.title }}</v-tab>
     <v-tab-item v-for="(item, index) in items" :key="index">
       <vue-showdown
+        v-if="item.code"
         class="markdown-body"
         :markdown="item.code"
         flavor="github"
@@ -13,36 +14,71 @@
 </template>
 
 <script>
+import { renderByRuntime } from '@/plugins/vue-md-component'
 export default {
   props: {
     url: {
       type: String,
       default: ''
+    },
+    preview: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
-    items: [],
     doc: null
   }),
-  async created() {
+  computed: {
+    template() {
+      return this.parseTag('template')
+    },
+    script() {
+      return this.parseTag('script')
+    },
+    style() {
+      return this.parseTag('style')
+    },
+    items() {
+      const result = []
+      if (this.template) {
+        result.push(this.template)
+      }
+      if (this.script) {
+        result.push(this.script)
+      }
+      if (this.style) {
+        result.push(this.style)
+      }
+      if (this.preview) {
+        result.push({ title: 'preview' })
+      }
+      return result
+    }
+  },
+  async mounted() {
     const response = await this.$axios.get(this.url)
-    this.parseVueFile(response.data)
+    this.doc = new DOMParser().parseFromString(response.data, 'text/html')
+    this.compilePreview()
   },
   methods: {
-    parseVueFile(text) {
-      this.items = []
-      this.doc = new DOMParser().parseFromString(text, 'text/html')
-      this.parseItem('template', 'html')
-      this.parseItem('script', 'js')
-      this.parseItem('style', 'css')
-    },
-    parseItem(tag, language) {
+    parseTag(tag) {
+      if (!this.doc) return undefined
       const result = this.doc.getElementsByTagName(tag)[0]
-      const title = tag
-      const code = '```vue\n' + result.outerHTML + '\n```'
       if (result) {
-        this.items.push({ title, language, code })
+        const title = tag
+        const code = '```vue\n' + result.outerHTML + '\n```'
+        const innerCode = result.innerHTML
+        return { title, code, innerCode }
+      } else {
+        return undefined
       }
+    },
+    compilePreview() {
+      if (!this.preview) return
+      const template = this.template.innerCode
+      const script = this.script.innerCode
+      renderByRuntime(document.getElementById(this.url), { template, script })
     }
   }
 }

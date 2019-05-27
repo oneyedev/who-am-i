@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-
 const requireComponent = require.context(
   // 컴포넌트들이 있는 폴더
   './../components/base',
@@ -47,4 +46,17 @@ export const vueMdComponentExtension = {
   type: 'lang',
   regex: /&([^&]+)&/g,
   replace: `<vue-md-component target="$1" data="$2"></vue-md-component>`
+}
+
+export async function renderByRuntime(el, { template, script }) {
+  try {
+    const replaced = script.replace('export default', 'return')
+    const option = new Function(replaced)()
+    option.template = template
+    const vm = new Vue(option)
+    vm.$mount(el)
+    return Promise.resolve(vm)
+  } catch (error) {
+    return Promise.reject(error)
+  }
 }
