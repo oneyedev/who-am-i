@@ -58,17 +58,22 @@ export default {
   },
   async mounted() {
     const response = await this.$axios.get(this.url)
-    this.doc = new DOMParser().parseFromString(response.data, 'text/html')
+    this.doc = response.data
     this.compilePreview()
   },
   methods: {
     parseTag(tag) {
       if (!this.doc) return undefined
-      const result = this.doc.getElementsByTagName(tag)[0]
-      if (result) {
+      const tagStart = `<${tag}>`
+      const tagEnd = `</${tag}>`
+      const start = this.doc.indexOf(tagStart)
+      const end = this.doc.lastIndexOf(tagEnd)
+      const doc = this.doc
+      if (start !== -1 && end !== -1) {
         const title = tag
-        const code = '```vue\n' + result.outerHTML + '\n```'
-        const innerCode = result.innerHTML
+        const code =
+          '```vue\n' + doc.substring(start, end + tagEnd.length) + '\n```'
+        const innerCode = doc.substring(start + tagStart.length, end)
         return { title, code, innerCode }
       } else {
         return undefined
