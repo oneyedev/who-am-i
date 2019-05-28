@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import './plugins/showdown'
 import './plugins/axios'
+import './plugins/disqus'
 
 Vue.config.productionTip = false
 
