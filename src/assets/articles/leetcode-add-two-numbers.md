@@ -1,7 +1,8 @@
 # Leetcode - Add Two Numbers
 leetcode의 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) 문제이다.
+난이도: medium
 
-# Problem
+## Problem
 역순으로 나오는 두 개의 양의 정수 `linked-list`를 각 자리수마다 합하여 결과 `linked-list`를 반환하는 함수를 구현해야한다.
 
 ```
@@ -10,10 +11,10 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 ```
 
-# How to solve
+## How to solve
 딱히 이름있는 알고리즘이 사용되는 것은 아니지만 더한 값으로 인해 자리수가 올라가는 것을 고려해야하고 종료조건이 헷갈렸다. 시간복잡도는 *O(n)* 쯤 될 듯.
 
-# Solution
+## Solution
 ```py
 # class ListNode:
 #     def __init__(self, x):
@@ -46,7 +47,7 @@ class Solution:
         return origin
 ```
 
-# Result
+## Result
 Success
 Runtime: 72 ms (상위 10% 쯤)
 Memory Usage: 13.1 MB

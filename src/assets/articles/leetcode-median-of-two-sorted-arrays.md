@@ -137,7 +137,7 @@ class Solution:
         return nums[m] if n == 1 else (nums[m - 1] + nums[m]) / 2
 ```
 
-# Result
+## Result
 Success
 Runtime: 56 ms (상위 6% 쯤)
 Memory Usage: 13.5 MB

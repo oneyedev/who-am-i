@@ -1,7 +1,8 @@
 # Leetcode - Longest Substring Without Repeating Characters
 leetcode의 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) 문제이다.
+난이도: medium
 
-# Problem
+## Problem
 주어진 문자열의 서브스트링 중 반복되는 문자가 없는 가장 긴 문자열의 길이를 찾는 문제이다. 
 
 ```sh
@@ -23,7 +24,7 @@ Explanation: The answer is "wke", with the length of 3.
              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 ```
 
-# How to solve
+## How to solve
 반복되는 문자가 없는 가장 긴 문자열을 줄여서 LUS(the Longest Unique Substring)라고 하자. 문제를 잘게 쪼개어 점화식으로 접근해보았다. 
 
 ```sh
@@ -47,7 +48,7 @@ end(n) = end(n-1), otherwise
 
 `index(n)`은 해시맵으로 유지하고, 점화식은 `n`과 `n-1`만으로 이루어져 있으므로 배열을 크게 유지 할 필요는 없어 보인다. python의 해시맵 기능을 담당하는 `dictionary`와 `sliding window` 알고리즘을 이용해 문제를 풀었다. 시간복잡도는 *O(n)* 쯤 될 듯.
 
-# Solution
+## Solution
 ```py
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -78,7 +79,7 @@ class Solution:
         return answer
 ```
 
-# Result
+## Result
 Success
 Runtime: 64 ms (상위 7~8% 쯤)
 Memory Usage: 13.6 MB

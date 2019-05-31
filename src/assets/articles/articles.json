@@ -157,7 +157,7 @@
     },
     {
         "title": "leetcode - Add Two Numbers",
-        "text": "leetcode - Add Two Numbers 문제 풀이",
+        "text": "[medium] leetcode - Add Two Numbers 문제 풀이",
         "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
         "tags": [
             "leetcode",
@@ -170,7 +170,7 @@
     },
     {
         "title": "leetcode - Longest Substring Without Repeating Characters",
-        "text": "leetcode - Longest Substring Without Repeating Characters 문제 풀이",
+        "text": "[medium] leetcode - Longest Substring Without Repeating Characters 문제 풀이",
         "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
         "tags": [
             "leetcode",
