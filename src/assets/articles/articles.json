@@ -166,7 +166,7 @@
         ],
         "to": "leetcode-add-two-numbers",
         "regTime": 1557738718000,
-        "chgTime": 1557738718000
+        "chgTime": 1559275553000
     },
     {
         "title": "leetcode - Longest Substring Without Repeating Characters",
@@ -179,7 +179,7 @@
         ],
         "to": "leetcode-longest-substring-without-repeating-characters",
         "regTime": 1557829325000,
-        "chgTime": 1557829325000
+        "chgTime": 1559275553000
     },
     {
         "title": "Read git commit history - nodegit",
@@ -240,6 +240,8 @@
             "hard",
             "median-of-two-sorted-arrays"
         ],
-        "to": "leetcode-median-of-two-sorted-arrays"
+        "to": "leetcode-median-of-two-sorted-arrays",
+        "regTime": 1559275313000,
+        "chgTime": 1559275553000
     }
 ]
