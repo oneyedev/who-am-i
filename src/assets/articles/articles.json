@@ -243,5 +243,17 @@
         "to": "leetcode-median-of-two-sorted-arrays",
         "regTime": 1559275313000,
         "chgTime": 1559275553000
+    },
+    {
+        "title": "leetcode - Longest Palindromic Substring",
+        "text": "[medium] leetcode - Longest Palindromic Substring 문제 풀이",
+        "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
+        "tags": [
+            "leetcode",
+            "algorithm",
+            "hard",
+            "longest-palindromic-substring"
+        ],
+        "to": "leetcode-longest-palindromic-substring"
     }
 ]
