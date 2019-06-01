@@ -254,6 +254,8 @@
             "hard",
             "longest-palindromic-substring"
         ],
-        "to": "leetcode-longest-palindromic-substring"
+        "to": "leetcode-longest-palindromic-substring",
+        "regTime": 1559369643000,
+        "chgTime": 1559369643000
     }
 ]
