@@ -269,5 +269,17 @@
             "zigzag-conversion"
         ],
         "to": "leetcode-zigzag-conversion"
+    },
+    {
+        "title": "leetcode - String to Integer (atoi)",
+        "text": "[medium] leetcode - String to Integer (atoi) 문제 풀이",
+        "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
+        "tags": [
+            "leetcode",
+            "algorithm",
+            "medium",
+            "string-to-integer-atoi"
+        ],
+        "to": "leetcode-string-to-integer-atoi"
     }
 ]
