@@ -257,5 +257,17 @@
         "to": "leetcode-longest-palindromic-substring",
         "regTime": 1559369643000,
         "chgTime": 1559369643000
+    },
+    {
+        "title": "leetcode - ZigZag Conversion",
+        "text": "[medium] leetcode - ZigZag Conversion 문제 풀이",
+        "src": "https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg",
+        "tags": [
+            "leetcode",
+            "algorithm",
+            "medium",
+            "zigzag-conversion"
+        ],
+        "to": "leetcode-zigzag-conversion"
     }
 ]
