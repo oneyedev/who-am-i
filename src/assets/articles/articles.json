@@ -268,7 +268,9 @@
             "medium",
             "zigzag-conversion"
         ],
-        "to": "leetcode-zigzag-conversion"
+        "to": "leetcode-zigzag-conversion",
+        "regTime": 1559549386000,
+        "chgTime": 1559549386000
     },
     {
         "title": "leetcode - String to Integer (atoi)",
@@ -280,6 +282,8 @@
             "medium",
             "string-to-integer-atoi"
         ],
-        "to": "leetcode-string-to-integer-atoi"
+        "to": "leetcode-string-to-integer-atoi",
+        "regTime": 1559549414000,
+        "chgTime": 1559549414000
     }
 ]
