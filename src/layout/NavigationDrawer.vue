@@ -58,6 +58,10 @@ export default {
         {
           title: 'Algorithm',
           to: '/articles#algorithm'
+        },
+        {
+          title: 'Docker',
+          to: '/articles#docker'
         }
       ]
     }
