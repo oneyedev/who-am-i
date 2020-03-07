@@ -339,5 +339,19 @@
         "to": "nodemon-in-docker",
         "regTime": 1583224420000,
         "chgTime": 1583224420000
+    },
+    {
+        "title": "Express - Mongo in Docker-compose",
+        "text": "Docker-compose를 이용한 Express와 Mongo 구축",
+        "src": "https://www.mongodb.com/assets/images/global/MongoDB_Logo_Dark.svg",
+        "tags": [
+            "docker",
+            "docker-compose",
+            "express",
+            "mongo"
+        ],
+        "to": "express-mongo-in-docker-compose",
+        "regTime": 1583224420000,
+        "chgTime": 1583224420000
     }
 ]
