@@ -4,7 +4,7 @@ import 'vuetify/src/stylus/app.styl'
 import goTo from 'vuetify/lib/components/Vuetify/goTo'
 
 Vue.use(Vuetify, {
-  iconfont: 'md'
+  iconfont: 'mdi'
 })
 export function scrollBehavior(to, from, savedPosition) {
   let scrollTo = 0

@@ -8,12 +8,12 @@
     <v-list>
       <v-list-tile @click="goToPage('/')">
         <v-list-tile-action>
-          <v-icon>home</v-icon>
+          <v-icon>mdi-home</v-icon>
         </v-list-tile-action>
         <v-list-tile-title to="/">Home</v-list-tile-title>
       </v-list-tile>
 
-      <v-list-group prepend-icon="chrome_reader_mode" no-action value="false">
+      <v-list-group prepend-icon="mdi-file-document" no-action value="false">
         <template v-slot:activator>
           <v-list-tile>
             <v-list-tile-title>Articles</v-list-tile-title>
