@@ -30,6 +30,24 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list-group>
+
+      <v-list-group prepend-icon="mdi-gamepad-variant" no-action value="false">
+        <template v-slot:activator>
+          <v-list-tile>
+            <v-list-tile-title>Games</v-list-tile-title>
+          </v-list-tile>
+        </template>
+
+        <v-list-tile
+          v-for="(game, i) in games"
+          :key="i"
+          @click="goToPage(game.to)"
+        >
+          <v-list-tile-content>
+            <v-list-tile-title v-text="game.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list-group>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -62,6 +80,12 @@ export default {
         {
           title: 'Docker',
           to: '/articles#docker'
+        }
+      ],
+      games: [
+        {
+          title: 'Monthly Iron',
+          to: '/games#monthly-iron'
         }
       ]
     }
