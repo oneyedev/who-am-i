@@ -1,14 +1,23 @@
 <template>
   <div class="d-flex justify-content-center">
-    <iframe
-      class="game"
-      src="https://oneyedev.github.io/flappy-bird-clone/"
-    ></iframe>
+    <iframe class="game" :src="src"></iframe>
   </div>
 </template>
 
 <script>
-export default {}
+import games from '@/assets/games/games.json'
+export default {
+  created() {
+    const id = this.$route.query.id
+    const game = games.find(game => game.to === id)
+    if (game) {
+      this.src = game.url
+    }
+  },
+  data: () => ({
+    src: ''
+  })
+}
 </script>
 
 <style scoped>
