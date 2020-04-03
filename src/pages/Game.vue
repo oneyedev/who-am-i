@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <iframe class="game" :src="src"></iframe>
+    <iframe class="game" :src="src" allowfullscreen></iframe>
   </div>
 </template>
 
