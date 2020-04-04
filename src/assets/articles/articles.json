@@ -353,5 +353,18 @@
         "to": "express-mongo-in-docker-compose",
         "regTime": 1583580330000,
         "chgTime": 1583580330000
+    },
+    {
+        "title": "Enable Input Field for Unity Mobile WebGL",
+        "text": "유니티 모바일 WebGL에서 Input Field 사용하기",
+        "src": "https://www.mongodb.com/assets/images/global/MongoDB_Logo_Dark.svg",
+        "tags": [
+            "unity",
+            "WebGL",
+            "mobile"
+        ],
+        "to": "enable-input-field-for-unity-mobile-webgl",
+        "regTime": 1583580330000,
+        "chgTime": 1583580330000
     }
 ]
