@@ -50,7 +50,7 @@
     {
         "title": "vscode settings when eslint conflict with vetur",
         "text": "[팁] eslint와 vetur의 code formatting 기능이 충돌났을 때 vscode 설정으로 해결하기 ",
-        "src": "https://eslint.org/img/logo.svg",
+        "src": "https://d33wubrfki0l68.cloudfront.net/204482ca413433c80cd14fe369e2181dd97a2a40/092e2/assets/img/logo.svg",
         "tags": [
             "vue",
             "eslint",
