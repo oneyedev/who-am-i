@@ -84,6 +84,10 @@ export default {
       ],
       games: [
         {
+          title: 'All',
+          to: '/games'
+        },
+        {
           title: 'Monthly Iron',
           to: '/games#monthly-iron'
         }
