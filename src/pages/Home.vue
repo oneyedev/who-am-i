@@ -13,14 +13,24 @@
         <div class="subheading mb-3 text-xs-center">
           This is personal blog about IT, Game Development etc
         </div>
-        <v-btn
-          class="blue lighten-2 mt-5"
-          dark
-          large
-          @click="$router.push('/articles')"
-        >
-          Go to articles
-        </v-btn>
+        <div class="d-flex mt-5">
+          <v-btn
+            class="blue lighten-2"
+            dark
+            large
+            @click="$router.push('/articles')"
+          >
+            Go to articles
+          </v-btn>
+          <v-btn
+            class="orange darken-1"
+            dark
+            large
+            @click="$router.push('/games')"
+          >
+            Go to games
+          </v-btn>
+        </div>
       </v-layout>
       <span class="body-1 text-xs-left">
         Photo by Émile Perron on Unsplash
