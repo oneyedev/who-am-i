@@ -1,7 +1,7 @@
 <template>
   <card-grid :cards="cards" :selected-tags="selectedTags">
     <v-card slot-scope="{ card }">
-      <v-img :src="card.src" aspect-ratio="1.5"></v-img>
+      <v-img :src="card.src" aspect-ratio="1.5" contain></v-img>
       <v-divider></v-divider>
       <v-card-title primary-title>
         <div>
