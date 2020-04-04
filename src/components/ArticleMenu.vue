@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn @click="onClickBookmark" color="pink" dark fixed bottom right fab>
-      <v-icon>bookmark</v-icon>
+      <v-icon>mdi-bookmark</v-icon>
     </v-btn>
     <article-index
       class="article_index"

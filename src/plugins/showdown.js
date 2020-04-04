@@ -11,9 +11,9 @@ const linkExtension = {
 <$1 id="$2">
     <a onclick="onClickArticleAnchor('#$2')" class="anchor" aria-hidden="true">
         <i
-            class="octicon octicon-link material-icons"
+          aria-hidden="true"
+          class="v-icon mdi mdi-link theme--light"
         >
-        link
         </i>
     </a>
     $3
