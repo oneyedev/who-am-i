@@ -1,17 +1,6 @@
 <template>
   <v-container grid-list-lg>
     <v-layout row wrap>
-      <v-flex xs12>
-        <v-select
-          v-model="selectedTags"
-          :items="tags"
-          label="Filter"
-          multiple
-          chips
-          hint="Select tags"
-          persistent-hint
-        ></v-select>
-      </v-flex>
       <v-flex
         v-for="(card, index) in filtered"
         :key="index"
@@ -30,10 +19,10 @@ export default {
     selectedTags: Array
   },
   computed: {
-    tags() {
-      return [...new Set(this.cards.map(card => card.tags).flat())]
-    },
     filtered() {
+      if (this.selectedTags.length === 0) {
+        return this.cards
+      }
       return this.cards.filter(card => {
         for (const selected of this.selectedTags) {
           if (card.tags.includes(selected)) {

@@ -57,11 +57,7 @@ export default {
       this.$router.push({ name: 'article', query: { id: to } })
     },
     setFilterTags(tags) {
-      if (tags.length > 0) {
-        this.selectedTags = tags
-      } else {
-        this.selectedTags = this.tags
-      }
+      this.selectedTags = tags
     }
   }
 }
