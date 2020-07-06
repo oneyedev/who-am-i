@@ -59,15 +59,16 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.article_index
-    position: fixed
-    bottom: 16px
-    right: 100px
-    padding: 10px
+<style lang="scss" scoped>
+.article_index {
+  position: fixed;
+  bottom: 16px;
+  right: 100px;
+  padding: 10px;
+}
 @media (max-width: 600px) {
   .article_index {
-    right: 90px
+    right: 90px;
   }
 }
 </style>

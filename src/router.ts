@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home.vue'
-import Article from './pages/Article.vue'
 import ArticleGrid from './pages/ArticleGrid.vue'
-import Game from './pages/Game.vue'
+import Article from './pages/Article.vue'
 import GameGrid from './pages/GameGrid.vue'
-import { scrollBehavior } from './plugins/vuetify'
+import Game from './pages/Game.vue'
+
 Vue.use(Router)
 
-const router = new Router({
+export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  scrollBehavior: scrollBehavior,
   routes: [
     {
       path: '/',
@@ -39,6 +38,16 @@ const router = new Router({
       component: Game
     },
     { path: '*', component: () => import('@/pages/NotFound.vue') }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
-export default router

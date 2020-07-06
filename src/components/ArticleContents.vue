@@ -1,43 +1,36 @@
 <template>
   <vue-showdown
-    :class="`markdown-body ${$style.index}`"
+    :class="`markdown-body ${$style.index} ${$style.tomorrow}`"
     :markdown="markdown"
-    flavor="github"
     :extensions="['showdownHighlight', 'linkExtension']"
   ></vue-showdown>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
 import { renderByTagName } from '@/plugins/vue-md-component'
-export default {
-  props: {
-    id: {
-      type: String,
-      default: ''
-    }
-  },
-  data: () => ({
-    markdown: ''
-  }),
+import axios from 'axios'
+@Component({})
+export default class ArticleContents extends Vue {
+  @Prop({ type: String, default: '' }) id!: string
+  markdown = ''
   created() {
     this.createContents(this.id)
-  },
-  methods: {
-    async createContents(id) {
-      try {
-        const module = await import(`@/assets/articles/${id}.md`)
-        this.markdown = module.default
-        await this.$nextTick()
-        await renderByTagName(this.$el)
-        this.raiseOnReadyContents(this.$el)
-      } catch (error) {
-        console.warn(error)
-        this.markdown = '<center>No article contents</center>'
-      }
-    },
-    raiseOnReadyContents(el) {
-      this.$emit('ready', el)
+  }
+  async createContents(id: string) {
+    try {
+      const response = await axios.get(`/static/articles/${id}.md`)
+      this.markdown = response.data
+      await this.$nextTick()
+      await renderByTagName(this.$el)
+      this.raiseOnReadyContents(this.$el)
+    } catch (error) {
+      console.warn(error)
+      this.markdown = '<center>No article contents</center>'
     }
+  }
+  raiseOnReadyContents(el: Element) {
+    this.$emit('ready', el)
   }
 }
 </script>

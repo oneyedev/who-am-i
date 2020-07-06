@@ -1,7 +1,7 @@
 const Git = require('nodegit')
 const fs = require('fs')
 const path = require('path')
-const articlePath = path.resolve('src/assets/articles/articles.json')
+const articlePath = path.resolve('src/assets/articles.json')
 fs.readFile(articlePath, 'utf8', (err, data) => {
   const articles = JSON.parse(data)
   Git.Repository.open('.').then(async repo => {

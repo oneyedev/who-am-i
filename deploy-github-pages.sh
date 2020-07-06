@@ -5,7 +5,7 @@ set -e
 
 # update article date
 node article-date-updater
-git add src/assets/articles/articles.json
+git add src/assets/articles.json
 git commit -m "update article date" | true
 
 # build

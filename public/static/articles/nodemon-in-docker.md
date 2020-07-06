@@ -38,7 +38,7 @@ setInterval(function () {
 ## nodemon
 src폴더내에 무언가를 변경할 때마다 `npm run dev`을 터미널에서 실행하는 건, 여간 귀찮은 일이 아니므로 `nodemon`을 설치해보자.
 
-```sh
+```bash
 npm install --save-dev nodemon
 ```
 

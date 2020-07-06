@@ -6,10 +6,10 @@
       :open.sync="open"
       transition
     >
-      <template v-slot:prepend="{ item, open }">
+      <template #prepend="{}">
         •
       </template>
-      <template v-slot:label="{ item }">
+      <template #label="{ item }">
         <div class="item" @click="onClick(item)">
           <span>{{ item.name }}</span>
         </div>
@@ -68,10 +68,11 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.item
-  width: 100%
-  cursor: pointer
+<style lang="scss" scoped>
+.item {
+  width: 100%;
+  cursor: pointer;
+}
 @media (max-width: 600px) {
   .item {
     font-size: 1rem;

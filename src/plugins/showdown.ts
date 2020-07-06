@@ -1,7 +1,6 @@
 import Vue from 'vue'
-import VueShowdown, { showdown } from 'vue-showdown'
+import VueShowdown from 'vue-showdown'
 import showdownHighlight from 'showdown-highlight'
-import 'highlight.js/styles/github.css'
 import 'github-markdown-css'
 
 const linkExtension = {
@@ -20,9 +19,9 @@ const linkExtension = {
 </$1>
 `
 }
-showdown.extension('showdownHighlight', showdownHighlight)
-showdown.extension('linkExtension', linkExtension)
+VueShowdown.showdown.extension('showdownHighlight', showdownHighlight)
+VueShowdown.showdown.extension('linkExtension', linkExtension)
 
 Vue.use(VueShowdown, {
-  flavor: 'github'
+  // flavor: 'github'
 })

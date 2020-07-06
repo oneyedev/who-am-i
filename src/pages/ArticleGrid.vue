@@ -20,7 +20,7 @@
       <v-divider></v-divider>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn flat color="orange" @click="goToArticle(card.to)">
+        <v-btn text color="orange" @click="goToArticle(card.to)">
           read
         </v-btn>
       </v-card-actions>
@@ -28,37 +28,43 @@
   </card-grid>
 </template>
 
-<script>
-import articles from '@/assets/articles/articles.json'
-import filters from '@/mixins/filters'
-import CardGrid from '@/layout/CardGrid'
-export default {
-  mixins: [filters],
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { Article } from '@/types/Article'
+import articles from '@/assets/articles.json'
+import { toDateFormat } from '@/mixins/filters'
+import CardGrid from '@/layouts/CardGrid.vue'
+Component.registerHooks([
+  'beforeRouteEnter',
+  'beforeRouteUpdate',
+  'beforeRouteLeave'
+])
+@Component({
   components: {
     CardGrid
   },
-  data() {
-    return {
-      cards: articles,
-      selectedTags: []
-    }
+  filters: {
+    toDateFormat
   },
   beforeRouteEnter(to, from, next) {
     const tags = to.hash.split(/#/g).filter(Boolean)
-    next(vm => vm.setFilterTags(tags))
+    next((vm: any) => vm.setFilterTags(tags))
   },
   beforeRouteUpdate(to, from, next) {
     const tags = to.hash.split(/#/g).filter(Boolean)
-    this.setFilterTags(tags)
+    const vm: any = this
+    vm.setFilterTags(tags)
     next()
-  },
-  methods: {
-    goToArticle(to) {
-      this.$router.push({ name: 'article', query: { id: to } })
-    },
-    setFilterTags(tags) {
-      this.selectedTags = tags
-    }
+  }
+})
+export default class ArticleGrid extends Vue {
+  cards: Array<Article> = articles
+  selectedTags: Array<string> = []
+  goToArticle(to: string) {
+    this.$router.push({ name: 'article', query: { id: to } })
+  }
+  setFilterTags(tags: Array<string>) {
+    this.selectedTags = tags
   }
 }
 </script>

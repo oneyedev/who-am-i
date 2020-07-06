@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-center">
     <iframe class="game" :src="src" allowfullscreen></iframe>
   </div>
 </template>
 
 <script>
-import games from '@/assets/games/games.json'
+import games from '@/assets/games'
 export default {
   created() {
     const id = this.$route.query.id
@@ -22,6 +22,7 @@ export default {
 
 <style scoped>
 .game {
-  height: calc(100vh - 100px);
+  width: 100%;
+  height: calc(100vh - 20px);
 }
 </style>

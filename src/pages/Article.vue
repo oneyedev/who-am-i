@@ -1,11 +1,6 @@
 <template>
   <v-container :class="$style.container">
-    <v-card
-      :class="{
-        'pa-4': $vuetify.breakpoint.smAndDown,
-        'pa-5': $vuetify.breakpoint.mdAndUp
-      }"
-    >
+    <v-card class="pa-5 pa-sm-7 pa-md-10">
       <article-contents
         :id="id"
         @ready="onReadyArticleContents"

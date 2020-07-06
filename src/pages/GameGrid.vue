@@ -20,7 +20,7 @@
       <v-divider></v-divider>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn flat color="orange" @click="goToGame(card.to)">
+        <v-btn text color="orange" @click="goToGame(card.to)">
           read
         </v-btn>
       </v-card-actions>
@@ -29,11 +29,13 @@
 </template>
 
 <script>
-import games from '@/assets/games/games.json'
-import filters from '@/mixins/filters'
-import CardGrid from '@/layout/CardGrid'
+import games from '@/assets/games.json'
+import { toDateFormat } from '@/mixins/filters'
+import CardGrid from '@/layouts/CardGrid.vue'
 export default {
-  mixins: [filters],
+  filters: {
+    toDateFormat
+  },
   components: {
     CardGrid
   },

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import vuetify from './vuetify'
 const requireComponent = require.context(
   // 컴포넌트들이 있는 폴더
   './../components/base',
@@ -32,9 +33,9 @@ requireComponent.keys().forEach(fileName => {
   )
 })
 
-export function renderByTagName(el) {
+export function renderByTagName(el: Element) {
   try {
-    const vm = new Vue({ template: el.outerHTML })
+    const vm = new Vue({ template: el.outerHTML, vuetify })
     vm.$mount(el)
     return Promise.resolve(vm)
   } catch (error) {
@@ -48,7 +49,10 @@ export const vueMdComponentExtension = {
   replace: `<vue-md-component target="$1" data="$2"></vue-md-component>`
 }
 
-export async function renderByRuntime(el, { template, script }) {
+export async function renderByRuntime(
+  el: Element,
+  { template, script }: { template: string; script: string }
+) {
   try {
     const replaced = script.replace('export default', 'return')
     const option = new Function(replaced)()
